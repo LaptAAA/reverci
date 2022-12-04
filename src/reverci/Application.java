@@ -20,7 +20,7 @@ public class Application {
             while(flag) {
                 DecorGameProcess.printMenu();
                 ViewMessages.printMenu();
-                System.out.println("Чтобы завершить программу в любой момент введите Ctrl D.");
+                ViewMessages.printTerminationConditions();
                 int var = input.getVar();
                 if (var == 1) {
                     Game game = new Game(input);
@@ -36,7 +36,7 @@ public class Application {
                 }
             }
         } catch (NoSuchElementException e) {
-            System.out.println("Вы вышли из \"Реверси\".");
+            ViewMessages.printEarlyTermination();
         }
 
     }

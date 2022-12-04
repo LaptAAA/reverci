@@ -102,5 +102,12 @@ public class ViewMessages {
         System.out.println("Хотите сделать ход назад?\nВведите " + returnMove + " (да) или что угодно (нет):");
     }
 
+    public static void printTerminationConditions() {
+        System.out.println("Чтобы завершить программу в любой момент введите Ctrl D.");
+    }
+    public static void printEarlyTermination() {
+        System.out.println("Вы вышли из \"Реверси\".");
+    }
+
 
 }
