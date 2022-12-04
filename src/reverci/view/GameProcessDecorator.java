@@ -19,6 +19,7 @@ public class GameProcessDecorator {
     /**
      * Оформление для хода белых.
      */
+
     private static final String witheMove =    "▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ ХОД БЕЛЫХ ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒";
     /**
      * Оформление для хода черных.

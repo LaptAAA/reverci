@@ -147,6 +147,7 @@ public class Game {
         GameProcessDecorator.printPreviousMove();
     }
 
+
     /**
      * Условие окончания игры.
      * @return {@code true} - игра закончена, {@code false} - игра продолжается.

@@ -10,7 +10,6 @@ public class ComputerGamerEasy extends ComputerGamer {
     ComputerGamerEasy(Field f, boolean c) {
         super(f, c);
     }
-
     @Override
     Chip makeMove() {
         double maxEasyProfit = maxEasyProfit(field, color);

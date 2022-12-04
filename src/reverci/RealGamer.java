@@ -23,6 +23,7 @@ public class RealGamer extends Gamer {
         return answer;
     }
 
+
     @Override
     Chip makeMove() {
         boolean flag = true;

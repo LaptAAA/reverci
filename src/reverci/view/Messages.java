@@ -16,7 +16,6 @@ public class Messages {
                     2. Игра с компьютером (сложность: высокая);
                     3. Игра на двух игроков;
                     4. Выход.""";
-
     private static final String prompt = ChipDecorator.white + " - белая фишка,\n"
             + ChipDecorator.black + " - черная фишка,\n"
             + (ChipDecorator.stringPossible()) + " - доступный ход.";

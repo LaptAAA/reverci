@@ -34,6 +34,7 @@ public abstract class ComputerGamer extends Gamer {
         return maxProfit;
     }
 
+
     /**
      * Получить фишку с максимальной выгодой на лекгой мложности.
      * @param field поле, на котором будет считаться максимальная выгода.

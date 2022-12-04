@@ -25,6 +25,7 @@ public class InputConsole {
         return x;
     }
 
+
     /**
      * Получить координату Y.
      * @param s строка, из которой надо получить координату.

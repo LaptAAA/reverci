@@ -467,6 +467,7 @@ public abstract class Gamer {
         return sum;
     }
 
+
     /**
      * Обозначить возможные фишки возможными.
      * @param chips set возможных фишек.

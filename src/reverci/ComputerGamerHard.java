@@ -34,6 +34,7 @@ public class ComputerGamerHard extends ComputerGamer {
         return maxProfit;
     }
 
+
     /**
      * Получить из списка возможных фишек список возможных выгод.
      * @param possibleChips Set<Chip> - список возможных фишек.

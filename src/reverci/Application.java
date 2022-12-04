@@ -12,7 +12,6 @@ import java.util.Scanner;
 public class Application {
 
     InputConsole input;
-
     Application() {
         input =  new InputConsole(new Scanner(System.in));
     }

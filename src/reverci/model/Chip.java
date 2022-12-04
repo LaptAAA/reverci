@@ -112,6 +112,7 @@ public class Chip {
         return possibility;
     }
 
+
     /**
      * Получает координату по горизонтали.
      * @return Координата по горизонтали.

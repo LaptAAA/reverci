@@ -77,6 +77,7 @@ public class FieldDecorator {
         return finalField;
     }
 
+
     /**
      * Печать декорированного поля в консоль.
      * @param field поле, которое необходимо напечатать.
