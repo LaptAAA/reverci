@@ -1,8 +1,5 @@
 package reverci.model;
 
-/**
- * Класс Фишка
- */
 public class Chip {
     /**
      * Свойство существования на доске.

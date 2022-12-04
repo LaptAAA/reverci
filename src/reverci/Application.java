@@ -6,9 +6,6 @@ import reverci.view.Messages;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-/**
- * Класс приложения.
- */
 public class Application {
 
     InputConsole input;

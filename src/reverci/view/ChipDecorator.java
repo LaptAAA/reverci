@@ -9,11 +9,11 @@ public class ChipDecorator {
     /**
      * Основной цвет для печати.
      */
-    public static final String defaultColor = "\u001B[0m";
+    private static final String defaultColor = "\u001B[0m";
     /**
      * Цвет для возможных фишек.
      */
-    public static final String  possibleColor = "\u001B[32m";
+    private static final String  possibleColor = "\u001B[32m";
     /**
      * Обозначение белой фишки.
      */
@@ -29,7 +29,7 @@ public class ChipDecorator {
     /**
      * Обозначение не существующей фишки.
      */
-    public static final char empty = ' ';
+    private static final char empty = ' ';
     /**
      * Получить обозначение возможной фишки в нужном цвете.
      * @return обозначение возможной фишки в нужном цвете.

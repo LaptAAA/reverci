@@ -8,9 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Класс компьютерного игрока на высокой сложности.
- */
+
 public class ComputerGamerHard extends ComputerGamer {
     ComputerGamerHard(Field f, boolean c) {
         super(f, c);
@@ -33,7 +31,6 @@ public class ComputerGamerHard extends ComputerGamer {
         double maxProfit = Collections.max(hardProfits);
         return maxProfit;
     }
-
 
     /**
      * Получить из списка возможных фишек список возможных выгод.

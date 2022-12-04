@@ -4,26 +4,10 @@ package reverci.view;
  * Класс, отвечающий за декоративное оформление игрового процесса в консоли.
  */
 public class GameProcessDecorator {
-    /**
-     * Оформление для меню.
-     */
     private static final String menu = "⟣⟢⟣⟢⟣⟢⟣⟢⟣⟢⟣⟢ МЕНЮ ⟣⟢⟣⟢⟣⟢⟣⟢⟣⟢⟣⟢";
-    /**
-     * Оформление для конца игры.
-     */
     private static final String end = "⟣⟢⟣⟢⟣⟢⟣⟢⟣⟢ КОНЕЦ ИГРЫ ⟣⟢⟣⟢⟣⟢⟣⟢⟣⟢";
-    /**
-     * Оформление для предыдущего хода.
-     */
     private static final String previousMove = "⟣⟢⟣⟢⟣⟢⟣⟢⟣ ПРЕДЫДУЩИЙ ХОД ⟢⟣⟢⟣⟢⟣⟢⟣⟢";
-    /**
-     * Оформление для хода белых.
-     */
-
     private static final String witheMove =    "▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ ХОД БЕЛЫХ ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒";
-    /**
-     * Оформление для хода черных.
-     */
     private static final String blackMove =    "░░░░░░░░░░░░░░░░ ХОД ЧЁРНЫХ ░░░░░░░░░░░░░░░";
 
     /**

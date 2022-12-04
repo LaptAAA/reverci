@@ -7,9 +7,6 @@ import reverci.view.Messages;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Класс реального игрока.
- */
 public class RealGamer extends Gamer {
     InputConsole input;
     RealGamer(Field f, boolean c, InputConsole i) {
@@ -22,7 +19,6 @@ public class RealGamer extends Gamer {
         boolean answer = input.getBoolean();
         return answer;
     }
-
 
     @Override
     Chip makeMove() {

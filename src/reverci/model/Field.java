@@ -1,8 +1,5 @@
 package reverci.model;
 
-/**
- * Класс поля.
- */
 public class Field {
     /**
      * Свойство поле с фишками.

@@ -8,9 +8,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Абстрактный класс, обозначающий компьютерного игрока.
- */
 public abstract class ComputerGamer extends Gamer {
 
     ComputerGamer(Field f, boolean c) {

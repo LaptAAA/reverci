@@ -15,29 +15,17 @@ public class Game {
      * Список из полей, которые были в предыдущих ходах в игре.
      */
     List<Field> history;
-    /**
-     * Луйчший счет черных в игре.
-     */
+
     private static int maxScoreBlack = 0;
-    /**
-     * Лучший счет белых в игре.
-     */
+
     private static int maxScoreWithe = 0;
-    /**
-     * Поле, на котором идет игра.
-     */
+
     Field field;
-    /**
-     * Ввод из консоли.
-     */
+
     InputConsole input;
-    /**
-     * Игрок за белых.
-     */
+
     Gamer gamerWithe;
-    /**
-     * Игрок за черных.
-     */
+
     Gamer gamerBlack;
 
     Game(InputConsole i) {
@@ -47,10 +35,6 @@ public class Game {
         history.add(new Field(field));
     }
 
-    /**
-     * Старт игры.
-     * @param var вариант игры.
-     */
     void start(int var) {
         if (var == 1) {
             gamerBlack = new RealGamer(field, false, input);
@@ -67,9 +51,6 @@ public class Game {
         body();
     }
 
-    /**
-     * Тело игры.
-     */
     void body() {
         while (!isEnd()) {
             move(gamerBlack);
@@ -81,9 +62,6 @@ public class Game {
         end();
     }
 
-    /**
-     * Конец игры.
-     */
     void end() {
         GameProcessDecorator.printEnd();
         FieldDecorator.printField(field);
@@ -94,10 +72,6 @@ public class Game {
         Messages.printBestScore(maxScoreBlack, maxScoreWithe);
     }
 
-    /**
-     * Ход игрока.
-     * @param gamer игрок, который ходит.
-     */
     void move(Gamer gamer) {
         printField(gamer);
         Messages.printPrompt();
@@ -134,9 +108,6 @@ public class Game {
         return false;
     }
 
-    /**
-     * Вернуться на предыдущий ход.
-     */
     void returnMove() {
         history.remove(history.size() - 1);
         field = new Field(history.get(history.size() - 1));

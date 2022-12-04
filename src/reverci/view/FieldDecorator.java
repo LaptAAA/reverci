@@ -6,25 +6,15 @@ import reverci.model.Field;
  * Класс, отвечающий за декоративное оформление игрового поля в консоли.
  */
 public class FieldDecorator {
-    /**
-     * Обозначение верхней границы поля.
-     */
+
     static final private char[] topLine = "  ╔═══╦═══╦═══╦═══╦═══╦═══╦═══╦═══╗".toCharArray();
-    /**
-     * Обозначение средней линии поля с границами.
-     */
+
     static final private String middleBorderLine = " ║   ║   ║   ║   ║   ║   ║   ║   ║";
-    /**
-     * Обозначение средней линии поля с узлами.
-     */
+
     static final private char[] middleNodalLine = "  ╠═══╬═══╬═══╬═══╬═══╬═══╬═══╬═══╣".toCharArray();
-    /**
-     * Обозначение нижней границы поля.
-     */
+
     static final private char[] bottomLine = "  ╚═══╩═══╩═══╩═══╩═══╩═══╩═══╩═══╝".toCharArray();
-    /**
-     * Обозначение линии с координатами по горизонтали.
-     */
+
     static final private char[] horizontalCoordinatesLine = "    A   B   C   D   E   F   G   H  ".toCharArray();
     /**
      * Обозначение игрового поля с границами со столбцом координат по вертикали и со строкой координат по горизонтали.

@@ -6,9 +6,6 @@ import reverci.model.Field;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Абстрактный класс игрока.
- */
 public abstract class Gamer {
     /**
      * Вес кромовой фишки.
@@ -31,28 +28,14 @@ public abstract class Gamer {
      * Приортитеный вес НЕ кромовых клеток.
      */
     private final double priorityWeightOther = 0;
-    /**
-     * Поле, на котором идет игра.
-     */
-    protected Field field;
-    /**
-     * Цвет, за который играет игрок.
-     */
-    protected boolean color;
 
-    /**
-     * Получить цвет игрока.
-     * @return значение свойства color.
-     */
+    protected Field field;
+
+    protected boolean color;
 
     public boolean getColor() {
         return color;
     }
-
-    /**
-     * Получить поле.
-     * @return значение свойства field.
-     */
 
     public Field getField() {
         return field;
