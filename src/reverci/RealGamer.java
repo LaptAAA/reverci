@@ -2,7 +2,7 @@ package reverci;
 
 import reverci.model.Chip;
 import reverci.model.Field;
-import reverci.view.ViewMessages;
+import reverci.view.Messages;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +36,7 @@ public class RealGamer extends Gamer {
                 }
             }
             if (flag) {
-                ViewMessages.printErrorMove();
+                Messages.printErrorMove();
                 cage = input.getCoordinats();
             }
         }

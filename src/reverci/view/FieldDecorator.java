@@ -5,7 +5,7 @@ import reverci.model.Field;
 /**
  * Класс, отвечающий за декоративное оформление игрового поля в консоли.
  */
-public class ViewField {
+public class FieldDecorator {
     /**
      * Обозначение верхней границы поля.
      */
@@ -57,7 +57,7 @@ public class ViewField {
         char[][] field = decoratedField;
         for (int i=0; i<miniField.getField().length; i++) {
             for (int j=0; j<miniField.getField()[i].length; j++) {
-                field[2 * i + 1][4 * j + 4] = ViewChip.getChipDesign(miniField.getField()[i][j]);
+                field[2 * i + 1][4 * j + 4] = ChipDecorator.getChipDesign(miniField.getField()[i][j]);
             }
         }
         StringBuilder[] finalField = new StringBuilder[field.length];
@@ -65,8 +65,8 @@ public class ViewField {
         for (char[] chars : field) {
             StringBuilder line = new StringBuilder();
             for (char aChar : chars) {
-                if (aChar == ViewChip.possible) {
-                    line.append(ViewChip.stringPossible());
+                if (aChar == ChipDecorator.possible) {
+                    line.append(ChipDecorator.stringPossible());
                 } else {
                     line.append(aChar);
                 }
@@ -82,7 +82,7 @@ public class ViewField {
      * @param field поле, которое необходимо напечатать.
      */
     static public void printField(Field field) {
-        StringBuilder[] decoratedField = ViewField.getDecoratedField(field);
+        StringBuilder[] decoratedField = FieldDecorator.getDecoratedField(field);
         for (StringBuilder line : decoratedField) {
             System.out.println(line);
         }

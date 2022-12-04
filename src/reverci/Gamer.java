@@ -65,7 +65,7 @@ public abstract class Gamer {
 
     /**
      * Узнать, хочет ли игрок сделать ход назад.
-     * @return True - хочет, False - НЕ хочет.
+     * @return {@code true} - хочет, {@code false} - НЕ хочет.
      */
     abstract boolean wantReturn();
 

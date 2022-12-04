@@ -5,7 +5,7 @@ import reverci.model.Chip;
 /**
  * Класс, отвечающий за декоративное оформление фишек в консоли.
  */
-public class ViewChip {
+public class ChipDecorator {
     /**
      * Основной цвет для печати.
      */

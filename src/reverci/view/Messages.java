@@ -7,8 +7,8 @@ import java.util.Set;
 /**
  * Класс, отвечающий за оформление сообщений в консоль.
  */
-public class ViewMessages {
-    private static final char[] horizontalCoordinates = "ABCDEFGH".toCharArray();
+public class Messages {
+    public static final char[] horizontalCoordinates = "ABCDEFGH".toCharArray();
     private static final String menu =
             """
                     Выберите действие:
@@ -17,9 +17,9 @@ public class ViewMessages {
                     3. Игра на двух игроков;
                     4. Выход.""";
 
-    private static final String prompt = ViewChip.white + " - белая фишка,\n"
-            + ViewChip.black + " - черная фишка,\n"
-            + (ViewChip.stringPossible()) + " - доступный ход.";
+    private static final String prompt = ChipDecorator.white + " - белая фишка,\n"
+            + ChipDecorator.black + " - черная фишка,\n"
+            + (ChipDecorator.stringPossible()) + " - доступный ход.";
 
     public static void printErrorMove() {
         System.out.println("На текущем ходе нельзя поставить фишку на эту клетку.\n" +

@@ -2,9 +2,9 @@ package reverci;
 
 import reverci.model.Chip;
 import reverci.model.Field;
-import reverci.view.DecorGameProcess;
-import reverci.view.ViewField;
-import reverci.view.ViewMessages;
+import reverci.view.GameProcessDecorator;
+import reverci.view.FieldDecorator;
+import reverci.view.Messages;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,13 +85,13 @@ public class Game {
      * Конец игры.
      */
     void end() {
-        DecorGameProcess.printEnd();
-        ViewField.printField(field);
+        GameProcessDecorator.printEnd();
+        FieldDecorator.printField(field);
         int scoreBlack = countResult(false);
         int scoreWithe = countResult(true);
         changeMaxScore(scoreBlack, scoreWithe);
-        ViewMessages.printResults(scoreBlack, scoreWithe);
-        ViewMessages.printBestScore(maxScoreBlack, maxScoreWithe);
+        Messages.printResults(scoreBlack, scoreWithe);
+        Messages.printBestScore(maxScoreBlack, maxScoreWithe);
     }
 
     /**
@@ -100,8 +100,8 @@ public class Game {
      */
     void move(Gamer gamer) {
         printField(gamer);
-        ViewMessages.printPrompt();
-        DecorGameProcess.printMove(gamer.getColor());
+        Messages.printPrompt();
+        GameProcessDecorator.printMove(gamer.getColor());
         if (!skipping(gamer)) {
             if (gamerWithe instanceof ComputerGamer && history.size() >= 2 && gamer.wantReturn()) {
                 returnMove();
@@ -109,22 +109,22 @@ public class Game {
                 return;
             }
             if (gamer instanceof RealGamer) {
-                ViewMessages.printVariants(gamer.findPossibleChips(gamer.getColor()));
+                Messages.printVariants(gamer.findPossibleChips(gamer.getColor()));
             }
             Chip newChip = gamer.makeMove();
             field.putChip(newChip);
             field.recolorCapturedChips(newChip);
-            ViewMessages.printMove(gamer.getColor(), newChip.getX(), newChip.getY());
+            Messages.printMove(gamer.getColor(), newChip.getX(), newChip.getY());
 
         } else {
-            ViewMessages.printSkipping(gamer.getColor());
+            Messages.printSkipping(gamer.getColor());
         }
     }
 
     /**
      * Уловия пропуска хода
      * @param gamer игрок, для которого проверяется пропуск хода.
-     * @return True - игрок пропускает ход, False - игрок НЕ пропускает ход.
+     * @return {@code true} - игрок пропускает ход, {@code false}  - игрок НЕ пропускает ход.
      */
     boolean skipping(Gamer gamer) {
         Set<Chip> possibleChip = gamer.findPossibleChips(gamer.getColor());
@@ -144,12 +144,12 @@ public class Game {
         gamerWithe.updateField(field);
         gamerBlack.updateField(field);
 
-        DecorGameProcess.printPreviousMove();
+        GameProcessDecorator.printPreviousMove();
     }
 
     /**
      * Условие окончания игры.
-     * @return false - игра продолжается, true - игра закончена.
+     * @return {@code true} - игра закончена, {@code false} - игра продолжается.
      */
     boolean isEnd() {
 
@@ -171,7 +171,7 @@ public class Game {
     }
 
     /**
-     * Изменить лучший счет игрков.
+     * Изменить лучший счет игроков.
      * @param resultBlack счет черных в текущей игре.
      * @param resultWithe счет белых в текущей игре.
      */
@@ -192,7 +192,7 @@ public class Game {
         if (gamer instanceof RealGamer) {
             gamer.showPossibleChips();
         }
-        ViewField.printField(gamer.getField());
+        FieldDecorator.printField(gamer.getField());
         field.nullifyProbabilities();
     }
 

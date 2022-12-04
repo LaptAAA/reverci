@@ -1,9 +1,9 @@
 package reverci.view;
 
 /**
- * Класс отвечающий за декоративное оформление игрового процесса в консоли.
+ * Класс, отвечающий за декоративное оформление игрового процесса в консоли.
  */
-public class DecorGameProcess {
+public class GameProcessDecorator {
     /**
      * Оформление для меню.
      */
@@ -31,9 +31,9 @@ public class DecorGameProcess {
      */
     public static void printMove(boolean color) {
         if (color) {
-            System.out.println("\n" + DecorGameProcess.witheMove + "\n");
+            System.out.println("\n" + GameProcessDecorator.witheMove + "\n");
         } else {
-            System.out.println("\n" + DecorGameProcess.blackMove + "\n");
+            System.out.println("\n" + GameProcessDecorator.blackMove + "\n");
         }
     }
 

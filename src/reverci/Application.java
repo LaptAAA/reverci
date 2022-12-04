@@ -1,11 +1,14 @@
 package reverci;
 
-import reverci.view.DecorGameProcess;
-import reverci.view.ViewMessages;
+import reverci.view.GameProcessDecorator;
+import reverci.view.Messages;
 
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+/**
+ * Класс приложения.
+ */
 public class Application {
 
     InputConsole input;
@@ -15,12 +18,12 @@ public class Application {
     }
     void start() {
         boolean flag = true;
-        ViewMessages.printHello();
+        Messages.printHello();
         try {
             while(flag) {
-                DecorGameProcess.printMenu();
-                ViewMessages.printMenu();
-                ViewMessages.printTerminationConditions();
+                GameProcessDecorator.printMenu();
+                Messages.printMenu();
+                Messages.printTerminationConditions();
                 int var = input.getVar();
                 if (var == 1) {
                     Game game = new Game(input);
@@ -36,7 +39,7 @@ public class Application {
                 }
             }
         } catch (NoSuchElementException e) {
-            ViewMessages.printEarlyTermination();
+            Messages.printEarlyTermination();
         }
 
     }

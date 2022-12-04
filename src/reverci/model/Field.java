@@ -102,7 +102,6 @@ public class Field {
 
         boolean flag = false;
 
-        // по диагонали вправо вниз
         int count = 0;
         for (int i = x - 1; i >= 0; i--) {
             if (!field[y][i].getExistence()) {

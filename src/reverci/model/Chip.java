@@ -6,8 +6,8 @@ package reverci.model;
 public class Chip {
     /**
      * Свойство существования на доске.
-     * True - фишка есть на доске.
-     * False - фишки нет на доске.
+     * {@code true} - фишка есть на доске.
+     * {@code false} - фишки нет на доске.
      */
     private boolean existence = false;
 
@@ -21,22 +21,21 @@ public class Chip {
     private final int Y;
     /**
      * Свойство вероятности на доске.
-     * True - фишка может быть поставлена в текущем ходе.
-     * False - фишка НЕ может быть поставлена в текущем ходе.
+     * {@code true} - фишка может быть поставлена в текущем ходе.
+     * {@code false} - фишка НЕ может быть поставлена в текущем ходе.
      */
     private boolean possibility = false;
     /**
      * Свойство цвета.
-     * True - белый цвет.
-     * False - черный цвет.
+     * {@code true} - белый цвет.
+     * {@code false} - черный цвет.
      */
     private boolean color;
 
     /**
-     * Создает новую фишку.
-     * Цвет - автомататически черный.
-     * Сущетствование - автоматически нет.
-     *
+     * Создает несуществующую фишку.
+     * Цвет - автоматически черный.
+     * Существование - автоматически нет.
      * @param x координата новой фишки по горизонтали.
      * @param y координата новой фишки по вертикали.
      * @see Chip#Chip(int, int, boolean)
@@ -47,8 +46,7 @@ public class Chip {
     }
 
     /**
-     * Создает новую фишку.
-     *
+     * Создает новую существующую фишку.
      * @param x координата новой фишки по горизонтали.
      * @param y координата новой фишки по вертикали.
      * @param c цвет фишки.
@@ -63,8 +61,7 @@ public class Chip {
 
     /**
      * Проерка, что фишка стоит на угловой клетке
-     *
-     * @return True - фишка угловая, False - фишка НЕ угловая.
+     * @return {@code true} - фишка угловая, {@code false} - фишка НЕ угловая.
      */
     public boolean isAngular() {
 
@@ -79,8 +76,7 @@ public class Chip {
 
     /**
      * Проерка, что фишка стоит на кромочной клетке.
-     *
-     * @return True - фишка кромочная, False - фишка НЕ кромочная.
+     * @return {@code true} - фишка кромочная, {@code false} - фишка НЕ кромочная.
      */
     public boolean isEdging() {
         if (X == 0 || X == 7) {
@@ -94,7 +90,6 @@ public class Chip {
 
     /**
      * Получает значение свойства color.
-     *
      * @return Значение свойства color.
      */
     public boolean getColor() {
@@ -103,7 +98,6 @@ public class Chip {
 
     /**
      * Получает значение свойства exist.
-     *
      * @return Значение свойства exist.
      */
     public boolean getExistence() {
@@ -112,7 +106,6 @@ public class Chip {
 
     /**
      * Получает значение свойства possibility, которое можно задать с помощью метода {@link #setPossibility(boolean)}
-     *
      * @return Значение свойства possibility.
      */
     public boolean getPossibility() {
@@ -120,9 +113,8 @@ public class Chip {
     }
 
     /**
-     * Получает координату по горизонатли.
-     *
-     * @return Координата по горизонатли.
+     * Получает координату по горизонтали.
+     * @return Координата по горизонтали.
      */
     public int getX() {
         return X;
@@ -145,7 +137,6 @@ public class Chip {
 
     /**
      * Задает значение свойства possibility, которое можно получить при помощи метода {@link #getPossibility()}
-     *
      * @param value Новое значение свойства possibility.
      */
     public void setPossibility(boolean value) {

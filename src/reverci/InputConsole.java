@@ -1,9 +1,12 @@
 package reverci;
 
-import reverci.view.ViewMessages;
+import reverci.view.Messages;
 
 import java.util.Scanner;
 
+/**
+ * Класс, ответственный за ввод ответов пользователя в консоль.
+ */
 public class InputConsole {
     Scanner scanner;
     InputConsole(Scanner s) {
@@ -37,7 +40,7 @@ public class InputConsole {
     /**
      * Проверка, что строка содержит число от 1 до 8.
      * @param s строка, которую нужно проверить.
-     * @return true - строка содержит хотя бы одно число из диапазона, false - не имеет.
+     * @return {@code true} - строка содержит хотя бы одно число из диапазона, {@code false} - не имеет.
      */
     boolean haveNumber(String s) {
         s = s.replaceAll("[^1-8]", "");
@@ -50,7 +53,7 @@ public class InputConsole {
     /**
      * Проверка, что строка содержит букву от A до H.
      * @param s строка, которую нужно проверить.
-     * @return true - строка содержит хотя бы одно букву из диапазона, false - не имеет.
+     * @return {@code true} - строка содержит хотя бы одно букву из диапазона, {@code false} - не имеет.
      */
     boolean haveLetter(String s) {
         s = s.replaceAll("[^A-H]", "");
@@ -65,14 +68,14 @@ public class InputConsole {
      * @return int[] - пара координат, где сначала координата по X, затем координата по Y.
      */
     int[] getCoordinats()  {
-        ViewMessages.printRequestCoordinates();
+        Messages.printRequestCoordinates();
         boolean flag = true;
         String s = getString();
 
         while (flag) {
             s = s.replaceAll("[^A-H1-8]", "");
             if (!haveNumber(s) || !haveLetter(s)) {
-                ViewMessages.printCoordinatesError();
+                Messages.printCoordinatesError();
                 s = getString();
             } else {
                 flag = false;
@@ -91,7 +94,7 @@ public class InputConsole {
         while (flag) {
             s = s.replaceAll("[^1-4]", "");
             if (s.equals("")) {
-                ViewMessages.printGameVariantError();
+                Messages.printGameVariantError();
                 s = getString();
             } else {
                 flag = false;
@@ -113,11 +116,11 @@ public class InputConsole {
 
     /**
      * Получить ответ на вопрос об отмене хода.
-     * @return true - игрок хочет отменить ход, false - не хочет.
+     * @return {@code true} - игрок хочет отменить ход, {@code false} - не хочет.
      */
     boolean getBoolean()  {
         boolean answer = false;
-        ViewMessages.printRequestReturn("Y");
+        Messages.printRequestReturn("Y");
         String s = getString();
         s = s.replaceAll("[^Y]", "");
         System.out.println(s);
