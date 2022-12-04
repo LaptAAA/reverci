@@ -8,11 +8,11 @@ import java.util.Scanner;
 
 public class Application {
 
-    InputConsole input;
+    private InputConsole input;
     Application() {
         input =  new InputConsole(new Scanner(System.in));
     }
-    void start() {
+    public void start() {
         boolean flag = true;
         Messages.printHello();
         try {

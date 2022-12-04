@@ -50,13 +50,13 @@ public abstract class Gamer {
      * Узнать, хочет ли игрок сделать ход назад.
      * @return {@code true} - хочет, {@code false} - НЕ хочет.
      */
-    abstract boolean wantReturn();
+    public abstract boolean wantReturn();
 
     /**
      * Обновить поле.
      * @param f поле, на котрое нужно обновить текущее.
      */
-    void updateField(Field f) {
+    public void updateField(Field f) {
         field = f;
     }
 
@@ -64,14 +64,14 @@ public abstract class Gamer {
      * Получить фишку, которую хочет поставить игрок в текущем ходу.
      * @return фишка, которую выбрал игрок.
      */
-    abstract Chip makeMove();
+    public abstract Chip makeMove();
 
     /**
      * Показать возможные фишки.
      */
     public void showPossibleChips() {
         Set<Chip> possibleChips = findPossibleChips(color);
-        ChangePossibility(possibleChips);
+        changePossibility(possibleChips);
     }
 
     /**
@@ -102,7 +102,7 @@ public abstract class Gamer {
      * @param color цвет игрока, для которого считается выгода.
      * @return выгода от возможной фишки.
      */
-    double calculateChipProfit(Field field, Chip chip, boolean color) {
+    protected double calculateChipProfit(Field field, Chip chip, boolean color) {
 
         double sum = 0;
 
@@ -136,7 +136,7 @@ public abstract class Gamer {
      * @param color цвет игрока, для которого считается выгода.
      * @return выгода от возможной фишки по диагонали право вниз.
      */
-    double profitDiagonalRightDown(Field field, Chip chip, boolean color) {
+    private double profitDiagonalRightDown(Field field, Chip chip, boolean color) {
         double sum = 0;
 
         int x = chip.getX();
@@ -175,7 +175,7 @@ public abstract class Gamer {
      * @param color цвет игрока, для которого считается выгода.
      * @return выгода от возможной фишки по вертикали вниз.
      */
-    double profitVerticalDown(Field field, Chip chip, boolean color) {
+    private double profitVerticalDown(Field field, Chip chip, boolean color) {
         double sum = 0;
 
         int x = chip.getX();
@@ -214,7 +214,7 @@ public abstract class Gamer {
      * @param color цвет игрока, для которого считается выгода.
      * @return выгода от возможной фишки по диагонали влево вниз.
      */
-    double profitDiagonalLeftDown(Field field, Chip chip, boolean color) {
+    private double profitDiagonalLeftDown(Field field, Chip chip, boolean color) {
         double sum = 0;
 
         int x = chip.getX();
@@ -254,7 +254,7 @@ public abstract class Gamer {
      * @param color цвет игрока, для которого считается выгода.
      * @return выгода от возможной фишки по горизонтали вправо.
      */
-    double profitHorizontalRight(Field field, Chip chip, boolean color) {
+    private double profitHorizontalRight(Field field, Chip chip, boolean color) {
         double sum = 0;
 
         int x = chip.getX();
@@ -295,7 +295,7 @@ public abstract class Gamer {
      * @param color цвет игрока, для которого считается выгода.
      * @return выгода от возможной фишки по горизонтали влево.
      */
-    double profitHorizontalLeft(Field field, Chip chip, boolean color) {
+    private double profitHorizontalLeft(Field field, Chip chip, boolean color) {
         double sum = 0;
 
         int x = chip.getX();
@@ -336,7 +336,7 @@ public abstract class Gamer {
      * @param color цвет игрока, для которого считается выгода.
      * @return выгода от возможной фишки по диагонали вправо вверх.
      */
-    double profitDiagonalRightUp(Field field, Chip chip, boolean color) {
+    private double profitDiagonalRightUp(Field field, Chip chip, boolean color) {
         double sum = 0;
 
         int x = chip.getX();
@@ -377,7 +377,7 @@ public abstract class Gamer {
      * @param color цвет игрока, для которого считается выгода.
      * @return выгода от возможной фишки по вертикали вверх.
      */
-    double profitVerticalUp(Field field, Chip chip, boolean color) {
+    private double profitVerticalUp(Field field, Chip chip, boolean color) {
         double sum = 0;
 
         int x = chip.getX();
@@ -417,7 +417,7 @@ public abstract class Gamer {
      * @param color цвет игрока, для которого считается выгода.
      * @return выгода от возможной фишки по вдиагонали влево вверх.
      */
-    double profitDiagonalLeftUp(Field field, Chip chip, boolean color) {
+    private double profitDiagonalLeftUp(Field field, Chip chip, boolean color) {
         double sum = 0;
 
         int x = chip.getX();
@@ -455,7 +455,7 @@ public abstract class Gamer {
      * Обозначить возможные фишки возможными.
      * @param chips set возможных фишек.
      */
-    void ChangePossibility(Set<Chip> chips) {
+    private void changePossibility(Set<Chip> chips) {
         for (Chip chip : chips) {
             field.getField()[chip.getY()][chip.getX()].setPossibility(true);
         }

@@ -8,8 +8,8 @@ import java.util.Scanner;
  * Класс, ответственный за ввод ответов пользователя в консоль.
  */
 public class InputConsole {
-    Scanner scanner;
-    InputConsole(Scanner s) {
+    private Scanner scanner;
+    public InputConsole(Scanner s) {
         scanner = s;
     }
 
@@ -18,7 +18,7 @@ public class InputConsole {
      * @param s строка, из которой надо получить координату.
      * @return координата по Х (значение от 0 до 7).
      */
-    int getX(String s) {
+    private int getX(String s) {
         s = s.replaceAll("[^A-H]", "");
         char[] letters = s.toCharArray();
         int x = Character.getNumericValue(letters[0] - 17);
@@ -31,7 +31,7 @@ public class InputConsole {
      * @param s строка, из которой надо получить координату.
      * @return координата по Y (значение от 0 до 7).
      */
-    int getY(String s) {
+    private int getY(String s) {
         s = s.replaceAll("[^1-8]", "");
         char[] letters = s.toCharArray();
         int i1 = Character.getNumericValue(letters[0]);
@@ -43,7 +43,7 @@ public class InputConsole {
      * @param s строка, которую нужно проверить.
      * @return {@code true} - строка содержит хотя бы одно число из диапазона, {@code false} - не имеет.
      */
-    boolean haveNumber(String s) {
+    private boolean haveNumber(String s) {
         s = s.replaceAll("[^1-8]", "");
         if (s.equals("")) {
             return false;
@@ -56,7 +56,7 @@ public class InputConsole {
      * @param s строка, которую нужно проверить.
      * @return {@code true} - строка содержит хотя бы одно букву из диапазона, {@code false} - не имеет.
      */
-    boolean haveLetter(String s) {
+    private boolean haveLetter(String s) {
         s = s.replaceAll("[^A-H]", "");
         if (s.equals("") || s.length() > 1) {
             return false;
@@ -68,7 +68,7 @@ public class InputConsole {
      * Получить координаты.
      * @return int[] - пара координат, где сначала координата по X, затем координата по Y.
      */
-    int[] getCoordinats()  {
+    public int[] getCoordinats()  {
         Messages.printRequestCoordinates();
         boolean flag = true;
         String s = getString();
@@ -110,7 +110,7 @@ public class InputConsole {
      * Получить строку, состоящую из заглавных букв.
      * @return строка, состоящую из заглавных букв.
      */
-    String getString() {
+    private String getString() {
         String s = scanner.nextLine().toUpperCase();
         return s;
     }
@@ -119,7 +119,7 @@ public class InputConsole {
      * Получить ответ на вопрос об отмене хода.
      * @return {@code true} - игрок хочет отменить ход, {@code false} - не хочет.
      */
-    boolean getBoolean()  {
+    public boolean getBoolean()  {
         boolean answer = false;
         Messages.printRequestReturn("Y");
         String s = getString();

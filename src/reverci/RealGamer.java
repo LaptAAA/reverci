@@ -15,13 +15,13 @@ public class RealGamer extends Gamer {
     }
 
     @Override
-    boolean wantReturn() {
+    public boolean wantReturn() {
         boolean answer = input.getBoolean();
         return answer;
     }
 
     @Override
-    Chip makeMove() {
+    public Chip makeMove() {
         boolean flag = true;
         List<Chip> possibleChips = new ArrayList<>(findPossibleChips(color));
         int[] cage = input.getCoordinats();

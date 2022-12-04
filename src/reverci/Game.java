@@ -14,28 +14,28 @@ public class Game {
     /**
      * Список из полей, которые были в предыдущих ходах в игре.
      */
-    List<Field> history;
+    private List<Field> history;
 
     private static int maxScoreBlack = 0;
 
     private static int maxScoreWithe = 0;
 
-    Field field;
+    private Field field;
 
-    InputConsole input;
+    private InputConsole input;
 
-    Gamer gamerWithe;
+    private Gamer gamerWithe;
 
-    Gamer gamerBlack;
+    private Gamer gamerBlack;
 
-    Game(InputConsole i) {
+    public Game(InputConsole i) {
         field = new Field();
         input = i;
         history = new ArrayList<>();
         history.add(new Field(field));
     }
 
-    void start(int var) {
+    public void start(int var) {
         if (var == 1) {
             gamerBlack = new RealGamer(field, false, input);
             gamerWithe = new ComputerGamerEasy(field, true);
@@ -51,7 +51,7 @@ public class Game {
         body();
     }
 
-    void body() {
+    private void body() {
         while (!isEnd()) {
             move(gamerBlack);
             if (!isEnd()) {
@@ -62,7 +62,7 @@ public class Game {
         end();
     }
 
-    void end() {
+    private void end() {
         GameProcessDecorator.printEnd();
         FieldDecorator.printField(field);
         int scoreBlack = countResult(false);
@@ -72,7 +72,7 @@ public class Game {
         Messages.printBestScore(maxScoreBlack, maxScoreWithe);
     }
 
-    void move(Gamer gamer) {
+    private void move(Gamer gamer) {
         printField(gamer);
         Messages.printPrompt();
         GameProcessDecorator.printMove(gamer.getColor());
@@ -100,7 +100,7 @@ public class Game {
      * @param gamer игрок, для которого проверяется пропуск хода.
      * @return {@code true} - игрок пропускает ход, {@code false}  - игрок НЕ пропускает ход.
      */
-    boolean skipping(Gamer gamer) {
+    private boolean skipping(Gamer gamer) {
         Set<Chip> possibleChip = gamer.findPossibleChips(gamer.getColor());
         if (possibleChip.size() == 0) {
             return true;
@@ -108,7 +108,7 @@ public class Game {
         return false;
     }
 
-    void returnMove() {
+    private void returnMove() {
         history.remove(history.size() - 1);
         field = new Field(history.get(history.size() - 1));
 
@@ -123,7 +123,7 @@ public class Game {
      * Условие окончания игры.
      * @return {@code true} - игра закончена, {@code false} - игра продолжается.
      */
-    boolean isEnd() {
+    private boolean isEnd() {
 
         int count = 0;
         for (int i = 0; i < field.getField().length; i++) {
@@ -147,7 +147,7 @@ public class Game {
      * @param resultBlack счет черных в текущей игре.
      * @param resultWithe счет белых в текущей игре.
      */
-    void changeMaxScore(int resultBlack, int resultWithe) {
+    private void changeMaxScore(int resultBlack, int resultWithe) {
         if (resultBlack > maxScoreBlack) {
             maxScoreBlack = resultBlack;
         }
@@ -160,7 +160,7 @@ public class Game {
      * Распечатать поле с возможными ходами для игрока.
      * @param gamer игрок, для которого выбираются возможные ходы.
      */
-    public void printField(Gamer gamer) {
+    private void printField(Gamer gamer) {
         if (gamer instanceof RealGamer) {
             gamer.showPossibleChips();
         }
@@ -173,7 +173,7 @@ public class Game {
      * @param color цвет игрока.
      * @return результат игрока.
      */
-    public int countResult(boolean color) {
+    private int countResult(boolean color) {
         int score = 0;
         for (int i = 0; i < field.getField().length; i++) {
             for (int j = 0; j < field.getField()[i].length; j++) {
