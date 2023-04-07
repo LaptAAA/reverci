@@ -9,15 +9,15 @@ import java.util.List;
 
 public class RealGamer extends Gamer {
     InputConsole input;
+
     RealGamer(Field f, boolean c, InputConsole i) {
-        super(f,c);
+        super(f, c);
         input = i;
     }
 
     @Override
     public boolean wantReturn() {
-        boolean answer = input.getBoolean();
-        return answer;
+        return input.getBoolean();
     }
 
     @Override
@@ -25,7 +25,7 @@ public class RealGamer extends Gamer {
         boolean flag = true;
         List<Chip> possibleChips = new ArrayList<>(findPossibleChips(color));
         int[] cage = input.getCoordinats();
-        while(flag) {
+        while (flag) {
             for (Chip possibleChip : possibleChips) {
                 if (possibleChip.getX() == cage[0] && possibleChip.getY() == cage[1]) {
                     flag = false;

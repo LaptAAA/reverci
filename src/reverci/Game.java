@@ -22,7 +22,7 @@ public class Game {
 
     private Field field;
 
-    private InputConsole input;
+    private final InputConsole input;
 
     private Gamer gamerWithe;
 
@@ -97,15 +97,13 @@ public class Game {
 
     /**
      * Уловия пропуска хода
+     *
      * @param gamer игрок, для которого проверяется пропуск хода.
      * @return {@code true} - игрок пропускает ход, {@code false}  - игрок НЕ пропускает ход.
      */
     private boolean skipping(Gamer gamer) {
         Set<Chip> possibleChip = gamer.findPossibleChips(gamer.getColor());
-        if (possibleChip.size() == 0) {
-            return true;
-        }
-        return false;
+        return possibleChip.size() == 0;
     }
 
     private void returnMove() {
@@ -121,6 +119,7 @@ public class Game {
 
     /**
      * Условие окончания игры.
+     *
      * @return {@code true} - игра закончена, {@code false} - игра продолжается.
      */
     private boolean isEnd() {
@@ -136,14 +135,12 @@ public class Game {
         if (count == 64) {
             return true;
         }
-        if (skipping(gamerBlack) && skipping(gamerWithe)) {
-            return true;
-        }
-        return false;
+        return skipping(gamerBlack) && skipping(gamerWithe);
     }
 
     /**
      * Изменить лучший счет игроков.
+     *
      * @param resultBlack счет черных в текущей игре.
      * @param resultWithe счет белых в текущей игре.
      */
@@ -158,6 +155,7 @@ public class Game {
 
     /**
      * Распечатать поле с возможными ходами для игрока.
+     *
      * @param gamer игрок, для которого выбираются возможные ходы.
      */
     private void printField(Gamer gamer) {
@@ -170,6 +168,7 @@ public class Game {
 
     /**
      * Подсчет результата для игрока.
+     *
      * @param color цвет игрока.
      * @return результат игрока.
      */

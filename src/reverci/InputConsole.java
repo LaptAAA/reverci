@@ -9,25 +9,27 @@ import java.util.Scanner;
  */
 public class InputConsole {
     private Scanner scanner;
-    public InputConsole(Scanner s) {
-        scanner = s;
+
+    public InputConsole() {
+        scanner = new Scanner(System.in);
     }
 
     /**
      * Получить координату X
+     *
      * @param s строка, из которой надо получить координату.
      * @return координата по Х (значение от 0 до 7).
      */
     private int getX(String s) {
         s = s.replaceAll("[^A-H]", "");
         char[] letters = s.toCharArray();
-        int x = Character.getNumericValue(letters[0] - 17);
-        return x;
+        return Character.getNumericValue(letters[0] - 17);
     }
 
 
     /**
      * Получить координату Y.
+     *
      * @param s строка, из которой надо получить координату.
      * @return координата по Y (значение от 0 до 7).
      */
@@ -40,35 +42,32 @@ public class InputConsole {
 
     /**
      * Проверка, что строка содержит число от 1 до 8.
+     *
      * @param s строка, которую нужно проверить.
      * @return {@code true} - строка содержит хотя бы одно число из диапазона, {@code false} - не имеет.
      */
     private boolean haveNumber(String s) {
         s = s.replaceAll("[^1-8]", "");
-        if (s.equals("")) {
-            return false;
-        }
-        return true;
+        return !s.equals("");
     }
 
     /**
      * Проверка, что строка содержит букву от A до H.
+     *
      * @param s строка, которую нужно проверить.
      * @return {@code true} - строка содержит хотя бы одно букву из диапазона, {@code false} - не имеет.
      */
     private boolean haveLetter(String s) {
         s = s.replaceAll("[^A-H]", "");
-        if (s.equals("") || s.length() > 1) {
-            return false;
-        }
-        return true;
+        return !s.equals("") && s.length() <= 1;
     }
 
     /**
      * Получить координаты.
+     *
      * @return int[] - пара координат, где сначала координата по X, затем координата по Y.
      */
-    public int[] getCoordinats()  {
+    public int[] getCoordinats() {
         Messages.printRequestCoordinates();
         boolean flag = true;
         String s = getString();
@@ -87,9 +86,10 @@ public class InputConsole {
 
     /**
      * Получить вариант режима игры.
+     *
      * @return номер варианта игры.
      */
-    public int getVar()  {
+    public int getVar() {
         String s = getString();
         boolean flag = true;
         while (flag) {
@@ -102,24 +102,24 @@ public class InputConsole {
             }
         }
         char[] letters = s.toCharArray();
-        int i = Character.getNumericValue(letters[0]);
-        return i;
+        return Character.getNumericValue(letters[0]);
     }
 
     /**
      * Получить строку, состоящую из заглавных букв.
+     *
      * @return строка, состоящую из заглавных букв.
      */
     private String getString() {
-        String s = scanner.nextLine().toUpperCase();
-        return s;
+        return scanner.nextLine().toUpperCase();
     }
 
     /**
      * Получить ответ на вопрос об отмене хода.
+     *
      * @return {@code true} - игрок хочет отменить ход, {@code false} - не хочет.
      */
-    public boolean getBoolean()  {
+    public boolean getBoolean() {
         boolean answer = false;
         Messages.printRequestReturn("Y");
         String s = getString();

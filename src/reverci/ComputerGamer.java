@@ -13,6 +13,7 @@ public abstract class ComputerGamer extends Gamer {
     ComputerGamer(Field f, boolean c) {
         super(f, c);
     }
+
     @Override
     public boolean wantReturn() {
         return false;
@@ -20,6 +21,7 @@ public abstract class ComputerGamer extends Gamer {
 
     /**
      * Посчитать максимальную выгоду на легкой сложности.
+     *
      * @param field поле, на котором будет считаться максимальная выгода.
      * @param color цвет игрока, для которого считается максимальная выгода.
      * @return максимально возможная выгода.
@@ -27,16 +29,14 @@ public abstract class ComputerGamer extends Gamer {
     protected Double maxEasyProfit(Field field, boolean color) {
         Set<Chip> possibleChips = findPossibleChips(color);
         List<Double> rs = collectEasyProfits(field, possibleChips);
-        double maxProfit = Collections.max(rs);
-        return maxProfit;
+        return Collections.max(rs);
     }
-
-
 
 
     /**
      * Собрать выгоды от всех возможных ходов.
-     * @param field поле
+     *
+     * @param field         поле
      * @param possibleChips Set - возможные фишки.
      * @return список, состоящий из выгод от возможных фишек.
      */

@@ -22,17 +22,18 @@ public class ComputerGamerHard extends ComputerGamer {
 
     /**
      * Посчитать максимальную выгоду на сложном режиме.
+     *
      * @return количство очков.
      */
     private Double maxHardProfit() {
         Set<Chip> possibleChips = findPossibleChips(color);
         List<Double> hardProfits = collectHardProfits(possibleChips);
-        double maxProfit = Collections.max(hardProfits);
-        return maxProfit;
+        return Collections.max(hardProfits);
     }
 
     /**
      * Получить из списка возможных фишек список возможных выгод.
+     *
      * @param possibleChips Set<Chip> - список возможных фишек.
      * @return ArrayList<Double> - список возможных выгод.
      */
@@ -46,6 +47,7 @@ public class ComputerGamerHard extends ComputerGamer {
 
     /**
      * Посчитать выгоду на сложном режиме от возможной фишки.
+     *
      * @param chip возможная фишка
      * @return выгода.
      */
@@ -58,6 +60,7 @@ public class ComputerGamerHard extends ComputerGamer {
 
     /**
      * Посчитать максимальную выгоду противника относительно поставленной фишки.
+     *
      * @param chip поставленная фишка.
      * @return максимальная выгода.
      */
@@ -70,18 +73,17 @@ public class ComputerGamerHard extends ComputerGamer {
 
     /**
      * Получить фишку с максимальной выгодой на сложном режиме.
+     *
      * @param maxProfit максимальная выгода, возможная в данном ходе.
      * @return Chip - самая выгодная фишка.
      */
     private Chip maxHardProfitChip(double maxProfit) {
         Chip bestCh = new Chip(0, 0);
         Set<Chip> possibleChips = findPossibleChips(color);
-        int i = 0;
         for (Chip chip : possibleChips) {
             if (calculateChipHardProfit(chip) == maxProfit) {
                 bestCh = new Chip(chip.getX(), chip.getY(), color);
             }
-            i++;
         }
         return bestCh;
     }

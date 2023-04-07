@@ -8,16 +8,16 @@ import java.util.Set;
  * Класс, отвечающий за оформление сообщений в консоль.
  */
 public class Messages {
-    public static final char[] horizontalCoordinates = "ABCDEFGH".toCharArray();
-    private static final String menu =
+    public static final char[] HORIZONTAL_COORDINATES = "ABCDEFGH".toCharArray();
+    private static final String MENU =
             """
                     Выберите действие:
                     1. Игра с компьютером (сложность: легкая);
                     2. Игра с компьютером (сложность: высокая);
                     3. Игра на двух игроков;
                     4. Выход.""";
-    private static final String prompt = ChipDecorator.white + " - белая фишка,\n"
-            + ChipDecorator.black + " - черная фишка,\n"
+    private static final String PROMPT = ChipDecorator.WHITE + " - белая фишка,\n"
+            + ChipDecorator.BLACK + " - черная фишка,\n"
             + (ChipDecorator.stringPossible()) + " - доступный ход.";
 
     public static void printErrorMove() {
@@ -59,18 +59,18 @@ public class Messages {
     }
 
     public static void printMenu() {
-        System.out.println(menu);
+        System.out.println(MENU);
     }
 
     public static void printPrompt() {
-        System.out.println(prompt);
+        System.out.println(PROMPT);
     }
 
     public static void printMove(boolean color, int x, int y) {
         if (color) {
-            System.out.println("Белые походили на: " + horizontalCoordinates[x] + (8 - y));
+            System.out.println("Белые походили на: " + HORIZONTAL_COORDINATES[x] + (8 - y));
         } else {
-            System.out.println("Чёрные походили на: " + horizontalCoordinates[x] + (8 - y));
+            System.out.println("Чёрные походили на: " + HORIZONTAL_COORDINATES[x] + (8 - y));
         }
 
     }
@@ -80,7 +80,7 @@ public class Messages {
         for (Chip chip : chips) {
             int x = chip.getX() + 1;
             int y = chip.getY();
-            System.out.printf("%c%d ", horizontalCoordinates[x - 1], (8 - y));
+            System.out.printf("%c%d ", HORIZONTAL_COORDINATES[x - 1], (8 - y));
         }
         System.out.println("\n");
     }
@@ -104,6 +104,7 @@ public class Messages {
     public static void printTerminationConditions() {
         System.out.println("Чтобы завершить программу в любой момент введите Ctrl D.");
     }
+
     public static void printEarlyTermination() {
         System.out.println("Вы вышли из \"Реверси\".");
     }

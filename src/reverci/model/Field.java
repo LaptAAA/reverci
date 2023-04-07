@@ -8,6 +8,7 @@ public class Field {
 
     /**
      * Конструктор глубокого копирования.
+     *
      * @param f копируемое поле.
      * @see Field#Field()
      */
@@ -26,6 +27,7 @@ public class Field {
 
     /**
      * Конструктор без параметров.
+     *
      * @see Field#Field(Field)
      */
     public Field() {
@@ -45,6 +47,7 @@ public class Field {
 
     /**
      * Получить поле.
+     *
      * @return поле.
      */
     public Chip[][] getField() {
@@ -53,6 +56,7 @@ public class Field {
 
     /**
      * Добавить новую фишку на поле.
+     *
      * @param newChip новая фишка.
      */
     public void putChip(Chip newChip) {
@@ -72,6 +76,7 @@ public class Field {
 
     /**
      * Перекрасить поле относительно поставленной фишки.
+     *
      * @param chip поставленная фишка.
      */
     public void recolorCapturedChips(Chip chip) {
@@ -90,6 +95,7 @@ public class Field {
 
     /**
      * Перекрасить фишки, находящиеся слева по горизонтали от поставленной фишки.
+     *
      * @param chip поставленная фишка, относительно которой идет перекрашивание.
      */
     void recolorHorizontalLeft(Chip chip) {
@@ -122,6 +128,7 @@ public class Field {
 
     /**
      * Перекрасить фишки, находящиеся справа по горизонтали от поставленной фишки.
+     *
      * @param chip поставленная фишка, относительно которой идет перекрашивание.
      */
     void recolorHorizontalRight(Chip chip) {
@@ -153,6 +160,7 @@ public class Field {
 
     /**
      * Перекрасить фишки, находящиеся сверху по вертикали от поставленной фишки.
+     *
      * @param chip поставленная фишка, относительно которой идет перекрашивание.
      */
     void recolorVerticalUp(Chip chip) {
@@ -183,6 +191,7 @@ public class Field {
 
     /**
      * Перекрасить фишки, находящиеся снизу по вертикали от поставленной фишки.
+     *
      * @param chip поставленная фишка, относительно которой идет перекрашивание.
      */
     void recolorVerticalDown(Chip chip) {
@@ -213,6 +222,7 @@ public class Field {
 
     /**
      * Перекрасить фишки, находящиеся сверху справа по диагонали от поставленной фишки.
+     *
      * @param chip поставленная фишка, относительно которой идет перекрашивание.
      */
     void recolorDiagonalRightUp(Chip chip) {
@@ -243,6 +253,7 @@ public class Field {
 
     /**
      * Перекрасить фишки, находящиеся снизу справа по диагонали от поставленной фишки.
+     *
      * @param chip поставленная фишка, относительно которой идет перекрашивание.
      */
     void recolorDiagonalRightDown(Chip chip) {
@@ -273,6 +284,7 @@ public class Field {
 
     /**
      * Перекрасить фишки, находящиеся снизу слева по диагонали от поставленной фишки.
+     *
      * @param chip поставленная фишка, относительно которой идет перекрашивание.
      */
     void recolorDiagonalLeftDown(Chip chip) {
@@ -303,6 +315,7 @@ public class Field {
 
     /**
      * Перекрасить фишки, находящиеся сверху слева по диагонали от поставленной фишки.
+     *
      * @param chip поставленная фишка, относительно которой идет перекрашивание.
      */
     void recolorDiagonalLeftUp(Chip chip) {

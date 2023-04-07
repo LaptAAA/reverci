@@ -33,6 +33,7 @@ public class Chip {
      * Создает несуществующую фишку.
      * Цвет - автоматически черный.
      * Существование - автоматически нет.
+     *
      * @param x координата новой фишки по горизонтали.
      * @param y координата новой фишки по вертикали.
      * @see Chip#Chip(int, int, boolean)
@@ -44,6 +45,7 @@ public class Chip {
 
     /**
      * Создает новую существующую фишку.
+     *
      * @param x координата новой фишки по горизонтали.
      * @param y координата новой фишки по вертикали.
      * @param c цвет фишки.
@@ -58,6 +60,7 @@ public class Chip {
 
     /**
      * Проерка, что фишка стоит на угловой клетке
+     *
      * @return {@code true} - фишка угловая, {@code false} - фишка НЕ угловая.
      */
     public boolean isAngular() {
@@ -73,6 +76,7 @@ public class Chip {
 
     /**
      * Проерка, что фишка стоит на кромочной клетке.
+     *
      * @return {@code true} - фишка кромочная, {@code false} - фишка НЕ кромочная.
      */
     public boolean isEdging() {
@@ -87,6 +91,7 @@ public class Chip {
 
     /**
      * Получает значение свойства color.
+     *
      * @return Значение свойства color.
      */
     public boolean getColor() {
@@ -95,6 +100,7 @@ public class Chip {
 
     /**
      * Получает значение свойства exist.
+     *
      * @return Значение свойства exist.
      */
     public boolean getExistence() {
@@ -103,6 +109,7 @@ public class Chip {
 
     /**
      * Получает значение свойства possibility, которое можно задать с помощью метода {@link #setPossibility(boolean)}
+     *
      * @return Значение свойства possibility.
      */
     public boolean getPossibility() {
@@ -112,6 +119,7 @@ public class Chip {
 
     /**
      * Получает координату по горизонтали.
+     *
      * @return Координата по горизонтали.
      */
     public int getX() {
@@ -120,6 +128,7 @@ public class Chip {
 
     /**
      * Получает координату по вертикали.
+     *
      * @return Координата по вертикали.
      */
     public int getY() {
@@ -135,6 +144,7 @@ public class Chip {
 
     /**
      * Задает значение свойства possibility, которое можно получить при помощи метода {@link #getPossibility()}
+     *
      * @param value Новое значение свойства possibility.
      */
     public void setPossibility(boolean value) {
