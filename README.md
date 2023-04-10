@@ -1,6 +1,6 @@
-<h1 align="center">Реверси</h1>
-Коносольная версия игры   
-[Реверси](https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B2%D0%B5%D1%80%D1%81%D0%B8).
+<h1 align="center">Реверси</h1>  
+
+Коносольная версия игры [Реверси](https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B2%D0%B5%D1%80%D1%81%D0%B8).
 
 <h3 align="center">Работа с программой</h3>
 
